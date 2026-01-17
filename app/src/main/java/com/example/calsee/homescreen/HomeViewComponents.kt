@@ -26,39 +26,38 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kotlin.text.isDigit
 
 
 @Composable
-fun inputField(viewModel: HomeViewModel,){
-        TextField(
-            value = if ( viewModel.result == "") viewModel.displayText else viewModel.result,
-            onValueChange = { },
-            readOnly = true,
-            singleLine = true,
-            colors = TextFieldDefaults.colors(
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-                disabledIndicatorColor = Color.Transparent,
-                cursorColor = Color.White,
-                focusedContainerColor = Color.Transparent,
-                unfocusedContainerColor = Color.Transparent
-            ),
-            modifier = Modifier
-                .padding()
-                .padding(bottom = 64.dp)
-                .horizontalScroll(rememberScrollState(), reverseScrolling = true),
-            textStyle = TextStyle(
-                fontSize = 48.sp,
-                fontWeight = FontWeight.W500,
-                textAlign = TextAlign.End,
-                color = Color.White
-            )
+fun inputField(viewModel: HomeViewModel) {
+    TextField(
+        value = if (viewModel.result == "") viewModel.displayText else viewModel.result,
+        onValueChange = { },
+        readOnly = true,
+        singleLine = true,
+        colors = TextFieldDefaults.colors(
+            focusedIndicatorColor = Color.Transparent,
+            unfocusedIndicatorColor = Color.Transparent,
+            disabledIndicatorColor = Color.Transparent,
+            cursorColor = Color.White,
+            focusedContainerColor = Color.Transparent,
+            unfocusedContainerColor = Color.Transparent
+        ),
+        modifier = Modifier
+            .padding()
+            .padding(bottom = 64.dp)
+            .horizontalScroll(rememberScrollState(), reverseScrolling = true),
+        textStyle = TextStyle(
+            fontSize = 48.sp,
+            fontWeight = FontWeight.W500,
+            textAlign = TextAlign.End,
+            color = Color.White
         )
-    }
+    )
+}
 
 @Composable
-fun keypad(viewModel: HomeViewModel, context: Context){
+fun keypad(viewModel: HomeViewModel, context: Context) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(4),
         modifier = Modifier

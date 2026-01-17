@@ -2,12 +2,11 @@ package com.example.calsee.homescreen
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel: ViewModel() {
-    var displayText by  mutableStateOf("")
+class HomeViewModel : ViewModel() {
+    var displayText by mutableStateOf("")
     var result by mutableStateOf("")
     val buttonList = listOf(
         Button(false, "ac"),
@@ -31,6 +30,7 @@ class HomeViewModel: ViewModel() {
         Button(true, "."),
         Button(false, "="),
     )
+
     class Button(isNum: Boolean, text: String) {
         val isNum = isNum
         val text = text
